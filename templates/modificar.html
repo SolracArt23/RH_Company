@@ -1,0 +1,38 @@
+<head>
+    <meta charset='utf-8'>
+    <title>Formulario R.H</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/modi.css')}}"  >
+</head>
+<body>
+    <section class="form_wrap">
+
+        <section class="cantact_info">
+            <section class="info_title">
+                <span class="fa fa-user-circle"></span>
+                <h2>id:<a name="ID">{{datos.1}}</a></h2>
+            </section>
+            <section class="info_items">
+                <p><span class="fa fa-envelope"></span> borrador@gmail.com</p>
+                <p><span class="fa fa-mobile"></span> +1(333) 331-556</p>
+            </section>
+        </section>
+
+        <form action="/edit_/{{id}}" class="form_contact" method="post">
+            <h2>Datos para posibles candidatos</h2>
+            <div class="user_info">
+                <label for="names">Nombres *</label>
+                <input type="text" name="names" value="{{datos.1}}">
+
+                <label for="fecha">Fecha</label>
+                <input type="date" name="dates"placeholder="{{datos.3}}">
+                
+                <label for="phone">Codigo PK</label>
+                <input type="text" name="PK" placeholder="+57"placeholder="{{datos.2}}">
+
+                <input type="submit" value="Enviar Mensaje" id="btnSend">
+            </div>
+        </form>
+        
+    </section>
+
+</body>

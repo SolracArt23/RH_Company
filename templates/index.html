@@ -1,0 +1,45 @@
+<head>
+    <meta charset='utf-8'>
+    <title>Formulario R.H</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css')}}"  >
+</head>
+<body>
+    <section class="form_wrap">
+
+        <section class="cantact_info">
+            <section class="info_title">
+                <span class="fa fa-user-circle"></span>
+                <h2>R.H<br>Company</h2>
+            </section>
+            <section class="info_items">
+                <p><span class="fa fa-envelope"></span> borrador@gmail.com</p>
+                <p><span class="fa fa-mobile"></span> +1(333) 331-556</p>
+            </section>
+        </section>
+
+        <form action="/add" class="form_contact" method="post">
+            <h2>Datos para posibles candidatos</h2>
+            <div class="user_info">
+                <label for="names">Nombres *</label>
+                <input type="text" name="names">
+
+                <label for="fecha">Fecha</label>
+                <input type="date" name="dates">
+                
+                <label for="phone">Codigo PK</label>
+                <input type="text" name="PK" placeholder="+57">
+
+                <input type="submit" value="Enviar Mensaje" id="btnSend">
+                
+                <form action="/Tabla">
+                    <div class="user_info">
+                        <input type="submit" value="Ver tabla" id="btnSend">
+                    </div>
+                </form>
+            </div>
+        </form>
+
+        
+    </section>
+
+</body>

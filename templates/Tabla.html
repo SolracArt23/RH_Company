@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Datos de usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/tabla.css')}}"  >
+	
+</head>
+
+<body>
+<div class="table-title">
+<h3>Posibles candidatos</h3>
+</div>
+<table class="table-fill">
+<thead>
+<tr>
+<th class="text-left">Nombre</th>
+<th class="text-left">PK</th>
+<th class="text-left">Fecha</th>
+<th class="text-left">Modificar</th>
+<th class="text-left">Eliminar</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+    {% for user in datos %}
+    <tr>
+            
+            <td class="text-left">{{user.1}}</td>
+            <td class="text-left">{{user.2}}</td>
+            <td class="text-left">{{user.3}}</td>
+            <form action="/edit/{{user.0}}">
+                <td>
+                    <input type="submit" value="Modificar">
+                </td>
+            </form>
+            <form action="/delete/{{user.0}}">
+                <td>
+                    <input type="submit" value="Eliminar" >
+                </td>
+            </form>
+                    
+    </tr>
+    {% endfor %}
+
+</tbody>
+</table>
+  
+</body>
